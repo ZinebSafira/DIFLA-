@@ -1,14 +1,9 @@
-//We need normal bubbles and locked bubbles based on levels
-//if level done, other level unlocked
-//if level not completed, then level cannot be unlocked --> progress bar?
-// src/components/LevelBubble.jsx
-// src/components/LevelBubble.jsx
 import React from "react";
-import LockIcon from "../assets/lock-icon.png"; // Corrected the folder name
+import LockIcon from "../assets/lock-icon.png";
 
-function LevelBubble({ fishImage, isLocked }) {
+function LevelBubble({ fishImage, isLocked, style }) {
   return (
-    <div className="relative inline-block">
+    <div className="level-bubble" style={style}>
       <img src={fishImage} alt="Fish" className="w-24 h-24" />
       {isLocked && (
         <img
