@@ -1,11 +1,16 @@
 import React from "react";
-import LevelSelector from "../components/LevelSelector"; // Ensure this path is correct
+import Navbar from "./Navbar";
+import LevelSelector from "./LevelSelector";
 
 function LevelSelectorPage() {
+  const handleBubbleClick = (levelId) => {
+    console.log(`Bubble for level ${levelId} clicked`);
+  };
+
   return (
-    <div className="level-selector-page">
-      <h1>Select Your Level</h1>
-      <LevelSelector />
+    <div className="App">
+      <Navbar />
+      <LevelSelector handleBubbleClick={handleBubbleClick} />
     </div>
   );
 }
