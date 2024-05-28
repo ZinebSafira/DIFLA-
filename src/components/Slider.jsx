@@ -5,6 +5,20 @@ import Card from "./Card.jsx";
 const Slider = () => {
   const [selectedCard, setSelectedCard] = useState(null);
 
+  const cardsData = [
+    { title: "Raam", image: "/public/raam.png" },
+    { title: "Kaas", image: "/public/cheese.png" },
+    { title: "Kip", image: "/public/chicken.png" },
+    { title: "Vis", image: "/public/fish.png" },
+    { title: "Aap", image: "/public/monkey.png" },
+    { title: "Kaak", image: "/public/jaw.png" },
+    { title: "Mik", image: "/public/raak.png" },
+    { title: "Mes", image: "/public/knife.png" },
+    { title: "Vaas", image: "/public/vase.png" },
+    { title: "Vaar", image: "/public/vaar.png" },
+    { title: "Aas", image: "/public/bait.png" },
+  ];
+
   const handleCardClick = (title) => {
     if (selectedCard === title) {
       setSelectedCard(null);
@@ -20,78 +34,15 @@ const Slider = () => {
 
   return (
     <div className="slider">
-      <Card
-        image="/public/window.png"
-        title="Window"
-        isSelected={selectedCard === "Window"}
-        onClick={() => handleCardClick("Window")}
-      />
-      <Card
-        image="/public/cheese.png"
-        title="Cheese"
-        isSelected={selectedCard === "Cheese"}
-        onClick={() => handleCardClick("Cheese")}
-      />
-      <Card
-        image="/public/chicken.png"
-        title="Chicken"
-        isSelected={selectedCard === "Chicken"}
-        onClick={() => handleCardClick("Chicken")}
-      />
-      <Card
-        image="/public/fish.png"
-        title="Fish"
-        isSelected={selectedCard === "Fish"}
-        onClick={() => handleCardClick("Fish")}
-      />
-      <Card
-        image="/public/monkey.png"
-        title="Monkey"
-        isSelected={selectedCard === "Monkey"}
-        onClick={() => handleCardClick("Monkey")}
-      />
-      <Card
-        image="/public/jaw.png"
-        title="Jaw"
-        isSelected={selectedCard === "Jaw"}
-        onClick={() => handleCardClick("Jaw")}
-      />
-      <Card
-        image="/public/window.png"
-        title="Window"
-        isSelected={selectedCard === "Window"}
-        onClick={() => handleCardClick("Window")}
-      />
-      <Card
-        image="/public/cheese.png"
-        title="Cheese"
-        isSelected={selectedCard === "Cheese"}
-        onClick={() => handleCardClick("Cheese")}
-      />
-      <Card
-        image="/public/chicken.png"
-        title="Chicken"
-        isSelected={selectedCard === "Chicken"}
-        onClick={() => handleCardClick("Chicken")}
-      />
-      <Card
-        image="/public/fish.png"
-        title="Fish"
-        isSelected={selectedCard === "Fish"}
-        onClick={() => handleCardClick("Fish")}
-      />
-      <Card
-        image="/public/weird.png"
-        title="Weird"
-        isSelected={selectedCard === "Weird"}
-        onClick={() => handleCardClick("Weird")}
-      />
-      <Card
-        image="/public/jaw.png"
-        title="Jaw"
-        isSelected={selectedCard === "Jaw"}
-        onClick={() => handleCardClick("Jaw")}
-      />
+      {cardsData.map((card, index) => (
+        <Card
+          key={index}
+          image={card.image}
+          title={card.title}
+          isSelected={selectedCard === card.title}
+          onClick={() => handleCardClick(card.title)}
+        />
+      ))}
     </div>
   );
 };
