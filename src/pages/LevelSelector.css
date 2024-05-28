@@ -144,6 +144,13 @@ button:focus-visible {
   position: absolute;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: float 4s ease-in-out infinite;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.level-bubble:hover {
+  background-color: rgba(200, 200, 200, 0.8);
+  transform: scale(1.1);
 }
 
 .level-bubble img {

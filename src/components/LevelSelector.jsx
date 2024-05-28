@@ -34,6 +34,11 @@ function LevelSelector() {
     },
   ];
 
+  const handleBubbleClick = (levelId) => {
+    console.log(`Bubble for level ${levelId} clicked`);
+    // Perform any other actions here, e.g., show a modal or change some state
+  };
+
   return (
     <div className="App">
       <Navbar />
@@ -44,6 +49,8 @@ function LevelSelector() {
             fishImage={level.fishImage}
             isLocked={level.isLocked}
             style={level.style}
+            levelId={level.id}
+            onClick={handleBubbleClick}
           />
         ))}
       </div>
