@@ -18,13 +18,19 @@ body {
   background-position: center;
   display: flex;
   flex-direction: column;
-  color: #000;
+  color: #095179;
   font-family: "OpenDyslexic", sans-serif;
-  padding: 20px;
   position: relative;
+
+  width: 100vw;
+  height: 100vh;
 }
 
 .title {
   font-size: 2em;
-  margin-bottom: 20px;
+  background-color: antiquewhite;
+  border-radius: 20px;
+  padding: 10px;
+  width: fit-content;
+  margin-left: 20px;
 }

@@ -3,9 +3,21 @@
   padding: 20px;
   border-radius: 10px;
   transition: transform ease 0.5s;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
   transform: scale(1.1);
   background-color: #cfcec7;
+}
+
+.selected {
+  scale: 1.1;
+  background-color: #cfcec7;
+}
+
+.card-title {
+  text-align: center;
+  margin-top: auto;
 }

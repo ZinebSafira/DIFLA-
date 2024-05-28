@@ -1,11 +1,11 @@
 import React from "react";
 import "./Card.css";
 
-const Card = ({ image, title }) => {
+const Card = ({ image, title, isSelected, onClick }) => {
   return (
-    <div className="card">
+    <div className={`card ${isSelected ? "selected" : ""}`} onClick={onClick}>
       <img src={image} alt={title} />
-      <p>{title}</p>
+      <p className="card-title">{title}</p>
     </div>
   );
 };
