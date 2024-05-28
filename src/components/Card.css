@@ -1,0 +1,11 @@
+.card {
+  background-color: #f1f0e8;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform ease 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background-color: #cfcec7;
+}
