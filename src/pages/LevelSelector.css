@@ -1,0 +1,72 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #007bff; /* Bright blue background */
+    color: white;
+    width: 100% !important; /* Make navbar full width */
+    position: fixed; /* Stick navbar to the top */
+    top: 0;
+  }
+  
+  .level-bubble {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.8
+    ); /* White background for the bubbles with some transparency */
+    border: 2px solid #ccc; /* Gray border */
+    margin: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  .level-bubble img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+  
+  .level-bubble.locked::after {
+    content: "🔒"; /* Display a lock icon for locked levels */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.5em; /* Increase the size of the lock icon */
+  }
+  
+  .levels-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 60px; /* Add margin to move bubbles down */
+    background: url("/assets/background-sea.png") no-repeat center center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .level-bubble {
+    animation: float 4s ease-in-out infinite;
+  }
+  

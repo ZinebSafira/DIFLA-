@@ -2,13 +2,18 @@
 import React from "react";
 import LevelBubble from "./LevelBubble";
 import Navbar from "./Navbar";
+import YellowFish from "../assets/yellow-fish.png"
+import PuprleFish from "../assets/purple-fish.png"
+import GrayFish from "../assets/gray-fish.png"
+import GreenFish from "../assets/green-fish.png"
+
 
 function LevelSelector() {
   const levels = [
-    { id: 1, fishImage: "/assets/yellow-fish.png", isLocked: false },
-    { id: 2, fishImage: "/assets/purple-fish.png", isLocked: false },
-    { id: 3, fishImage: "/assets/gray-fish.png", isLocked: true },
-    { id: 4, fishImage: "/assets/green-fish.png", isLocked: false },
+    { id: 1, fishImage: YellowFish , isLocked: false },
+    { id: 2, fishImage: PuprleFish, isLocked: false },
+    { id: 3, fishImage: GrayFish, isLocked: true },
+    { id: 4, fishImage: GreenFish, isLocked: false },
   ];
 
   return (
