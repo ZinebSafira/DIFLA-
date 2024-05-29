@@ -1,7 +1,7 @@
-import React from "react";
+import PropTypes from 'prop-types';
 import LockIcon from "../assets/lock-icon.png";
 
-function LevelBubble({ fishImage, isLocked, style, levelId, onClick }) {
+const LevelBubble = ({ fishImage, isLocked, style, levelId, onClick }) => {
   const handleClick = () => {
     if (!isLocked) {
       onClick(levelId);
@@ -10,16 +10,24 @@ function LevelBubble({ fishImage, isLocked, style, levelId, onClick }) {
 
   return (
     <div className="level-bubble" style={style} onClick={handleClick}>
-      <img src={fishImage} alt="Fish" className="w-24 h-24" />
+      <img src={fishImage} alt="Fish" />
       {isLocked && (
         <img
           src={LockIcon}
           alt="Locked"
-          className="absolute top-1 right-1 w-5 h-5"
+          className="absolute top-[-2rem] left-24 w-12 h-5"
         />
       )}
     </div>
   );
-}
+};
+
+LevelBubble.propTypes = {
+  fishImage: PropTypes.string.isRequired,
+  isLocked: PropTypes.bool.isRequired,
+  style: PropTypes.object,
+  levelId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default LevelBubble;

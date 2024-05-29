@@ -95,48 +95,13 @@ button:focus-visible {
 @tailwind components;
 @tailwind utilities;
 
-/* Navbar styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  box-sizing: border-box;
-}
-
-.navbar .nav-left {
-  display: flex;
-  align-items: center;
-}
-
-.navbar .nav-left img {
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.navbar .nav-right {
-  display: flex;
-  align-items: center;
-}
-
-.navbar .nav-right img {
-  margin-left: 10px;
-  border-radius: 50%;
-}
-
 /* Level bubble styles */
 .level-bubble {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.8);
   border: 2px solid #ccc;
@@ -154,7 +119,6 @@ button:focus-visible {
 }
 
 .level-bubble img {
-  width: 80%;
   height: 80%;
   object-fit: contain;
 }
@@ -186,9 +150,4 @@ button:focus-visible {
   100% {
     transform: translateY(0);
   }
-}
-
-/* App container */
-.App {
-  width: 100%;
 }

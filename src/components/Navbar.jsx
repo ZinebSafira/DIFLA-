@@ -1,22 +1,15 @@
-
-// src/components/Navbar.jsx
-import React from "react";
-import ArrowIcon from "../assets/ArrowRightOutline.png"; // Ensure this path is correct
+import ArrowIcon from "../assets/ArrowRightOutline.png";
 import UserAvatar from "../assets/user-avatar.png"
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <div className="navbar">
-      <div className="nav-left">
+    <div className="flex justify-between items-center p-4 bg-opacity-70 text-black font-bold">
+      <div className="flex items-center">
         <img src={ArrowIcon} alt="Back" className="w-6 h-6" />
       </div>
-      <div className="nav-right">
-        Hello, Zineb
-        <img
-           src= {UserAvatar}
-          alt="User Avatar"
-          className="w-8 h-8"
-        />
+      <div className="flex items-center text-xl">
+        <p>Hello, Zineb</p> 
+        <img src={UserAvatar} alt="User Avatar" className="w-8 h-8 rounded-full ml-2" />
       </div>
     </div>
   );

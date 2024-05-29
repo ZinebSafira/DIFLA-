@@ -1,14 +1,12 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import LevelSelector from "./components/LevelSelector"
-import './pages/LevelSelector.css'; // I forgot to import this and I was like what is going on?
+import './pages/LevelSelector.css';
 
-
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path="/levels" element={<LevelSelector />} />
+        <Route path="/" element={<LevelSelector />} />
         {/* Other team members will add their routes here */}
       </Routes>
     </div>
