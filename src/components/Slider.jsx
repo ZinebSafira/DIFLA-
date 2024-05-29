@@ -2,22 +2,8 @@ import React, { useState } from "react";
 import "./Slider.css";
 import Card from "./Card.jsx";
 
-const Slider = () => {
+const Slider = ({ cardsData, showTitles = true }) => {
   const [selectedCard, setSelectedCard] = useState(null);
-
-  const cardsData = [
-    { title: "Raam", image: "/public/raam.png" },
-    { title: "Kaas", image: "/public/cheese.png" },
-    { title: "Kip", image: "/public/chicken.png" },
-    { title: "Vis", image: "/public/fish.png" },
-    { title: "Aap", image: "/public/monkey.png" },
-    { title: "Kaak", image: "/public/jaw.png" },
-    { title: "Mik", image: "/public/raak.png" },
-    { title: "Mes", image: "/public/knife.png" },
-    { title: "Vaas", image: "/public/vase.png" },
-    { title: "Vaar", image: "/public/vaar.png" },
-    { title: "Aas", image: "/public/bait.png" },
-  ];
 
   const handleCardClick = (title) => {
     if (selectedCard === title) {
@@ -41,6 +27,7 @@ const Slider = () => {
           title={card.title}
           isSelected={selectedCard === card.title}
           onClick={() => handleCardClick(card.title)}
+          showTitle={showTitles}
         />
       ))}
     </div>
