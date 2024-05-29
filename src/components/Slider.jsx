@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./Slider.css";
 import Card from "./Card.jsx";
 
-const Slider = ({ cardsData, showTitles = true }) => {
+function Slider({ cardsData, showTitles = true, useLetterCardStyling }) {
+  // Include useLetterCardStyling as a parameter
   const [selectedCard, setSelectedCard] = useState(null);
 
   const handleCardClick = (title) => {
@@ -28,10 +29,11 @@ const Slider = ({ cardsData, showTitles = true }) => {
           isSelected={selectedCard === card.title}
           onClick={() => handleCardClick(card.title)}
           showTitle={showTitles}
+          useLetterCardStyling={useLetterCardStyling} // Pass useLetterCardStyling prop to Card
         />
       ))}
     </div>
   );
-};
+}
 
 export default Slider;

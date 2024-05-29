@@ -1,7 +1,7 @@
 import React from "react";
 import "./CorrectPrompt.css";
 
-const CorrectPrompt = () => {
+function CorrectPrompt() {
   return (
     <div className="correct-prompt">
       <h2>Was it correct?</h2>
@@ -11,6 +11,6 @@ const CorrectPrompt = () => {
       </div>
     </div>
   );
-};
+}
 
 export default CorrectPrompt;

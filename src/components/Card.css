@@ -7,14 +7,27 @@
   flex-direction: column;
 }
 
+.letter-card {
+  transition: transform ease 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+
 .card:hover {
   transform: scale(1.1);
   background-color: #cfcec7;
+}
+.letter-card:hover {
+  transform: scale(1.1);
 }
 
 .selected {
   scale: 1.1;
   background-color: #cfcec7;
+}
+
+.letter-card-selected {
+  scale: 1.1;
 }
 
 .card-title {
