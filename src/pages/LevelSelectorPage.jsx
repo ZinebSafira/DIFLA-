@@ -7,6 +7,6 @@ const LevelSelectorPage = () => {
       <LevelSelector />
     </div>
   );
-}
+};
 
 export default LevelSelectorPage;

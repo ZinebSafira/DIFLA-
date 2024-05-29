@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import LevelSelector from "./components/LevelSelector"
-import './pages/LevelSelector.css';
+import LevelSelector from "./components/LevelSelector";
+import "./pages/LevelSelector.css";
 
 const App = () => {
   return (
@@ -11,6 +11,6 @@ const App = () => {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;

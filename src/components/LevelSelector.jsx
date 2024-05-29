@@ -70,6 +70,6 @@ const LevelSelector = () => {
       </div>
     </div>
   );
-}
+};
 
 export default LevelSelector;

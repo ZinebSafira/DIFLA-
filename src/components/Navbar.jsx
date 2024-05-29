@@ -1,5 +1,5 @@
 import ArrowIcon from "../assets/ArrowRightOutline.png";
-import UserAvatar from "../assets/user-avatar.png"
+import UserAvatar from "../assets/user-avatar.png";
 
 const Navbar = () => {
   return (
@@ -13,6 +13,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;

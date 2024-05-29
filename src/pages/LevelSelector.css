@@ -23,14 +23,14 @@ html,
   padding: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden; /* Prevent scrollbars */
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  justify-content: flex-start; /* Ensure content starts below navbar */
   background-image: url("/src/assets/background-sea.png");
   background-size: cover;
   background-position: center;
@@ -105,7 +105,6 @@ button:focus-visible {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.8);
   border: 2px solid #ccc;
-  margin: 10px;
   position: absolute;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: float 4s ease-in-out infinite;
@@ -136,18 +135,47 @@ button:focus-visible {
   position: relative;
   width: 100%;
   height: calc(100vh - 60px); /* Adjust height based on navbar */
-  margin-top: 60px;
+  margin-top: 60px; /* Ensure content is below the navbar */
 }
 
-/* Float animation for bubbles */
-@keyframes float {
-  0% {
-    transform: translateY(0);
+/* Connecting bubbles */
+.connecting-bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Make sure connecting bubbles are not clickable */
+  background-image: url("/src/assets/connecting-bubbles.png"); /* Ensure this image exists */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveBubbles 4s ease-in-out infinite;
+}
+
+/* Animation for connecting bubbles */
+@keyframes moveBubbles {
+  0%,
+  100% {
+    transform: scale(1);
   }
   50% {
-    transform: translateY(-20px);
+    transform: scale(1.2);
+  }
+}
+
+/* Complex float animation for bubbles */
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, -10px);
+  }
+  50% {
+    transform: translate(0, -20px);
+  }
+  75% {
+    transform: translate(-10px, -10px);
   }
   100% {
-    transform: translateY(0);
+    transform: translate(0, 0);
   }
 }

@@ -7,9 +7,10 @@ const LevelBubble = ({ fishImage, isLocked, style, levelId, onClick }) => {
       onClick(levelId);
     }
   };
-
+ 
   return (
     <div className="level-bubble" style={style} onClick={handleClick}>
+      <img src={fishImage} alt="Fish" />
       <img src={fishImage} alt="Fish" />
       {isLocked && (
         <img
@@ -20,7 +21,7 @@ const LevelBubble = ({ fishImage, isLocked, style, levelId, onClick }) => {
       )}
     </div>
   );
-};
+}
 
 LevelBubble.propTypes = {
   fishImage: PropTypes.string.isRequired,
