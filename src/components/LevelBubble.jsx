@@ -1,42 +1,33 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+:import PropTypes from 'prop-types';
 import LockIcon from "../assets/lock-icon.png";
-
-function LevelBubble({ fishImage, isLocked, style, levelId, onClick }) {
-  const bubbleRef = useRef(null);
-
-  useEffect(() => {
-    gsap.to(bubbleRef.current, {
-      y: "+=20",
-      duration: 2,
-      yoyo: true,
-      repeat: -1,
-      ease: "power1.inOut",
-    });
-  }, []);
-
+ 
+const LevelBubble = ({ fishImage, isLocked, style, levelId, onClick }) => {
   const handleClick = () => {
     if (!isLocked) {
       onClick(levelId);
     }
   };
-
+ 
   return (
-    <div
-      ref={bubbleRef}
-      className="level-bubble"
-      style={style}
-      onClick={handleClick}>
-      <img src={fishImage} alt="Fish" className="w-24 h-24" />
+    <div className="level-bubble" style={style} onClick={handleClick}>
+      <img src={fishImage} alt="Fish" />
       {isLocked && (
         <img
           src={LockIcon}
           alt="Locked"
-          className="absolute top-1 right-1 w-5 h-5"
+          className="absolute top-[-2rem] left-24 w-12 h-5"
         />
       )}
     </div>
   );
-}
-
+};
+ 
+LevelBubble.propTypes = {
+  fishImage: PropTypes.string.isRequired,
+  isLocked: PropTypes.bool.isRequired,
+  style: PropTypes.object,
+  levelId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+ 
 export default LevelBubble;
