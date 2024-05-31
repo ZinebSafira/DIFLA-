@@ -4,7 +4,9 @@ export default function StarterProfile(){
 return(
 <div className="container">
       {/* Your content goes here */}
-      <h1>Hello, world!</h1>
+      <div className= "option1"> </div>
+      <div className= "option2"> </div>
+      <div className= "option3"> </div>
     </div>
 )
 }

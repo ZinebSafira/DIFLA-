@@ -19,7 +19,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
 h1{
     color: black;
 }
@@ -32,4 +32,34 @@ h1{
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Optional: for a fixed background effect */
+  }
+
+  .option1 {
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+    border-radius: 50%;
+    background-image: url('/img/turtle.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .option2 {
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+    border-radius: 50%;
+    background-image: url('/img/inktvis.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .option3 {
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+    border-radius: 50%;
+    background-image: url('/img/zeepaard.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
