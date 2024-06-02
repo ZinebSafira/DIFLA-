@@ -159,7 +159,7 @@ button:focus-visible {
       rgba(150, 101, 255, 0) 95.31%
     ),
     #76a3fb;
- 
+
   opacity: 0.8;
   backdrop-filter: blur(2px);
   position: absolute;
@@ -205,11 +205,33 @@ button:focus-visible {
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background-color: white;
+  background: radial-gradient(
+      87.21% 87.21% at 24.02% 15.74%,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      54.38% 54.38% at 46.18% 78.35%,
+      rgba(157, 201, 241, 0.5) 0%,
+      rgba(157, 201, 241, 0) 100%
+    ),
+    radial-gradient(
+      53.98% 53.98% at 26.54% 62.76%,
+      rgba(157, 201, 241, 0.8) 0%,
+      rgba(157, 201, 241, 0) 100%
+    ),
+    radial-gradient(
+      57.88% 57.88% at 84.08% 48.6%,
+      rgba(141, 124, 246, 0.8) 0%,
+      rgba(150, 101, 255, 0) 95.31%
+    ),
+    #76a3fb;
+  backdrop-filter: blur(2px);
   position: absolute;
+  transition: opacity 0.3s;
 }
 
 /* Animation for connecting bubbles */

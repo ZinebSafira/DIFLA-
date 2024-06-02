@@ -29,8 +29,8 @@ const LevelSelector = () => {
     },
     {
       id: 4,
-      fishImage: GreenFish,
-      isLocked: false,
+      fishImage: GrayFish,
+      isLocked: true,
       style: { top: "50vh", left: "70vw" },
     },
   ];
@@ -41,7 +41,9 @@ const LevelSelector = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen bg-cover bg-no-repeat overflow-hidden" style={{ backgroundImage: `url("../assets/underwater-background.png")` }}>
+    <div
+      className="relative w-screen h-screen bg-cover bg-no-repeat overflow-hidden"
+      style={{ backgroundImage: `url("../assets/underwater-background.png")` }}>
       <Navbar />
       <div className="relative w-full h-full">
         {levels.map((level, index) => (
@@ -49,19 +51,37 @@ const LevelSelector = () => {
             {index < levels.length - 1 && (
               <DotsConnector
                 start={{
-                  top: parseFloat(level.style.top.replace("vh", "")) * window.innerHeight / 100,
-                  left: parseFloat(level.style.left.replace("vw", "")) * window.innerWidth / 100,
+                  top:
+                    (parseFloat(level.style.top.replace("vh", "")) *
+                      window.innerHeight) /
+                    100,
+                  left:
+                    (parseFloat(level.style.left.replace("vw", "")) *
+                      window.innerWidth) /
+                    100,
                 }}
                 end={{
-                  top: parseFloat(levels[index + 1].style.top.replace("vh", "")) * window.innerHeight / 100,
-                  left: parseFloat(levels[index + 1].style.left.replace("vw", "")) * window.innerWidth / 100,
+                  top:
+                    (parseFloat(levels[index + 1].style.top.replace("vh", "")) *
+                      window.innerHeight) /
+                    100,
+                  left:
+                    (parseFloat(
+                      levels[index + 1].style.left.replace("vw", "")
+                    ) *
+                      window.innerWidth) /
+                    100,
                 }}
               />
             )}
             <LevelBubble
               fishImage={level.fishImage}
               isLocked={level.isLocked}
-              style={{ top: `calc(${level.style.top} - 50px)`, left: `calc(${level.style.left} - 50px)`, zIndex: 2 }}
+              style={{
+                top: `calc(${level.style.top} - 50px)`,
+                left: `calc(${level.style.left} - 50px)`,
+                zIndex: 2,
+              }}
               levelId={level.id}
               onClick={handleBubbleClick}
             />
