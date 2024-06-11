@@ -1,0 +1,14 @@
+.livebox {
+  margin: 20px;
+}
+
+.timeleft {
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}

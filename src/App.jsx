@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import GameScreen from "./GameScreen.jsx";
 
 const wordCards = [
@@ -41,18 +41,23 @@ const letterCards = [
 function App() {
   return (
     <div>
-      <GameScreen
+      {/* <GameScreen
         title="Choose the next word"
         sliderData={wordCards}
         showSliderTitles={true}
         useLetterCardStyling={false}
-      />
+        showSpeedSlider={false}
+        showLiveView={false}
+        
+      /> */}
 
       <GameScreen
         title="Choose the next letter"
         sliderData={letterCards}
         showSliderTitles={false}
         useLetterCardStyling={true}
+        showSpeedSlider={true}
+        showLiveView={true}
       />
     </div>
   );

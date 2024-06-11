@@ -2,12 +2,16 @@ import React from "react";
 import "./GameScreen.css";
 import Slider from "./components/Slider.jsx";
 import CorrectPrompt from "./components/CorrectPrompt.jsx";
+import SpeedSlider from "./components/SpeedSlider.jsx";
+import LiveView from "./components/LiveView.jsx";
 
 function GameScreen({
   title,
   sliderData,
   showSliderTitles,
   useLetterCardStyling,
+  showSpeedSlider,
+  showLiveView,
 }) {
   return (
     <div className="game-screen">
@@ -15,8 +19,10 @@ function GameScreen({
       <Slider
         cardsData={sliderData}
         showTitles={showSliderTitles}
-        useLetterCardStyling={useLetterCardStyling} // Specify true or false here
+        useLetterCardStyling={useLetterCardStyling}
       />
+      {showSpeedSlider && <SpeedSlider />}
+      {showLiveView && <LiveView />}
       <CorrectPrompt />
     </div>
   );
