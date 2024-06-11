@@ -15,28 +15,33 @@ const wordCards = [
   { title: "Aas", image: "/public/bait.png" },
 ];
 
-const letterCards = [
-  { title: "a", image: "/public/letters/a.png" },
-  { title: "aa", image: "/public/letters/aa.png" },
-  { title: "e", image: "/public/letters/e.png" },
-  { title: "g", image: "/public/letters/g.png" },
-  { title: "h", image: "/public/letters/h.png" },
-  { title: "i", image: "/public/letters/i.png" },
-  { title: "j", image: "/public/letters/j.png" },
-  { title: "k", image: "/public/letters/k.png" },
-  { title: "l", image: "/public/letters/l.png" },
-  { title: "m", image: "/public/letters/m.png" },
-  { title: "n", image: "/public/letters/n.png" },
-  { title: "o", image: "/public/letters/o.png" },
-  { title: "p", image: "/public/letters/p.png" },
-  { title: "r", image: "/public/letters/r.png" },
-  { title: "s", image: "/public/letters/s.png" },
-  { title: "t", image: "/public/letters/t.png" },
-  { title: "u", image: "/public/letters/u.png" },
-  { title: "v", image: "/public/letters/v.png" },
-  { title: "w", image: "/public/letters/w.png" },
-  { title: "z", image: "/public/letters/z.png" },
+const letterCards = [];
+const letters = [
+  "a",
+  "aa",
+  "e",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "z",
 ];
+
+letters.forEach((letter) => {
+  letterCards.push({ title: letter, image: `/public/letters/${letter}.png` });
+});
 
 function App() {
   return (
