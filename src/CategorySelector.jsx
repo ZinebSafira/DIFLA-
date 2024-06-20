@@ -1,53 +1,42 @@
-import React from "react";
+// CategorySelector.js
+import React, { useState } from 'react';
 import './CategorySelector.css';
-import letters from "./img/letters-img.png"
-import words from "./img/words.png"
-import sentences from "./img/sentences.png"
-import lock from "./img/lock.png"
-import stars from "./img/stars.png"
+import CategoryCard from './component/CategoryCard';
+import letters from './img/letters-img.png';
+import words from './img/words.png';
+import sentences from './img/sentences.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import InfoModal from './InfoModal';
+
 export default function CategorySelector() {
+    const [showModal, setShowModal] = useState(false);
+
+    const handleInfoClick = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
     return (
         <>
             <div className="layout">
-                <p>what would you like to learn today?</p>
+                <p>What would you like to learn today?</p>
                 <p>Choose your favorite category!</p>
             </div>
             <div className="categories">
                 <div className="categoriescard">
-                    <div className="card">
-                        <img src={letters}></img>
-                        <div className="container-row">
-
-                            <div className="container">
-                                <p>levels completed</p>
-                                <p>1/20</p>
-
-                            </div>
-                            <img src={stars}></img>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="image-container">
-                            <img src={words} alt="words"></img>
-                            <img src={lock} alt="lock" className="lock"></img>
-                        </div>
-                        <div className="container">
-                            <p>Finish 3 more levels to unlock “Words”</p>
-
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="image-container">
-                            <img src={sentences} alt="words"></img>
-                            <img src={lock} alt="lock" className="lock"></img>
-                        </div>
-                        <div className="container">
-                            <p>Finish 8 more levels to unlock “sentences”</p>
-
-                        </div>
-                    </div>
+                    <CategoryCard image={letters} levelsCompleted={1} completed={true} title="Letters" />
+                    <CategoryCard image={words} levelsToUnlock={3} completed={false} title="Words" />
+                    <CategoryCard image={sentences} levelsToUnlock={8} completed={false} title="Sentences" />
                 </div>
             </div>
+            <div className="info-icon">
+                <FontAwesomeIcon icon={faInfoCircle} size="4x" color='#095179' onClick={handleInfoClick} />
+            </div>
+            <InfoModal show={showModal} onClose={handleCloseModal} />
         </>
     );
 }

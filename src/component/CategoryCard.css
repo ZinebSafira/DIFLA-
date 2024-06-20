@@ -1,0 +1,73 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 40%;
+    color: black;
+    background-color: #EEE0C9;
+    padding: 0;
+}
+
+.card p {
+    color: #095179;
+    font-family: OpenDyslexic3;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.326px;
+}
+
+.categoriescard .card:nth-of-type(2),
+.categoriescard .card:nth-of-type(3) {
+    opacity: 0.6;
+    filter: blur(0.25px);
+}
+
+.card p:nth-of-type(2) {
+    font-size: 1rem;
+    padding-top: 10px;
+}
+
+.card img {
+    width: 100%;
+
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    text-align: left;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-row img {
+    width: fit-content;
+}
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+}
+
+.categoriescard {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img.lock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    height: 50px;
+}
